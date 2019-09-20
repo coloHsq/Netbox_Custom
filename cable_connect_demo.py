@@ -30,6 +30,8 @@ def connect_single_trunk(panels):
     color = '795548'
     cat = 1610
 
+    # if you need a different content type just import what you need and use the sintax below 
+    # eg. cont_type = ContentType.objects.get_for_model(Interface)
     cont_type = ContentType.objects.get_for_model(RearPort)
 
     for pan in panels:
