@@ -1,0 +1,32 @@
+<tr >
+	<td width="40%" align="right">
+		{% if trace.front_term is not None %}
+			<a href="{% url 'dcim:device' pk=trace.front_term.device_pk %}">
+				<label class="label" style="color: #ffffff; background-color: #{{trace.front_term.device_role}}">{{trace.front_term.device_name}} : {{trace.front_term.term_name}}</label>
+			</a>
+		{% else %}
+			--
+		{% endif %}
+	</td>
+
+	<td width="20%" align="center">
+		<label class="label" style="color: #ffffff; background-color: #{{patch_role}}">{{trace.origin}}</label>
+	</td>
+
+	<td width="40%" align="left">
+		{% if trace.rear_term is not None %}
+			<a href="{% url 'dcim:device' pk=trace.rear_term.device_pk %}">
+				<label class="label" style="color: #ffffff; background-color: #{{trace.rear_term.device_role}}">{{trace.rear_term.device_name}} : {{trace.rear_term.term_name}}</label>
+			</a>
+		{% else %}
+			--
+		{% endif %}
+	</td>
+</tr>
+
+
+
+
+
+
+
