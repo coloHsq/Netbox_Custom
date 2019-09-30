@@ -30,7 +30,7 @@ if it doesn't work, follow all the steps :
 7: restart netbox (eg. on CentOs 'systemctl restart netbox')
 
 
-Steps 3,4,5 have to be repeated everytime you update netbox.
+Steps 3,5,6 have to be repeated everytime you update netbox.
 During update, for the third step, instead of copying the whole file is better to add only the piece of HTML which adds the tile, to avoid canceling some UI added with the updates.
 
 ![NetBox](screens/html.PNG "html")
