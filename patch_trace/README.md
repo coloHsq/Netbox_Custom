@@ -10,7 +10,7 @@ if it doesn't work, follow all the steps :
 3: Under '/opt/netbox/netbox/templates/inc' replace 'nav_menu.html' with the custom one.
 	This step adds a tile linked to the custom view under Devices in the nav_menu
 	
-![NetBox](patch_trace/screens/nav_menu.png "Nav menu")
+![NetBox](/screens/nav_menu.png "Nav menu")
 	
 4: Under 'opt/netbox/netbox/opendev' edit 'views.py' to replace roles with roles from your environment.
 
