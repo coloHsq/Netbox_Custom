@@ -1,3 +1,5 @@
+This django app it's used to diaplay a view, containing some rack statstics, free units and number of available ports on structured cabling and pdus.
+
 Quick guide to setup this custom functionality:
 
 First of all, TAKE A BACKUP OF THE NETBOX FOLDER (/opt/netbox).
