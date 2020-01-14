@@ -9,10 +9,10 @@ before start using the whole thing, you have to run this script, better way it's
 
 # in order to make this script work properly, you need to assign a value the constants below (role name, not the id)
 POWER_RACK = 'Insert your role here'
-MULTI_MODE_CABLING = 'Insert your role here'
-SINGLE_MODE_CABLING = 'Insert your role here'
-COPPER_CABLING = 'Insert your role here'
-POWER_CABLING = 'Insert your role here'
+MULTI_MODE_DEVICE = 'Insert your role here'
+SINGLE_MODE_DEVICE = 'Insert your role here'
+COPPER_DEVICE = 'Insert your role here'
+POWER_DEVICE = 'Insert your role here'
 
 queryset = Rack.objects.exclude(role__name=POWER_RACK)  # if there's power rack in your environment, exclude them
 rack_dictionary = {}
@@ -43,13 +43,13 @@ for rack in queryset:
     power_devices = []
     # for every rack, fill the above lists with the "role defined" devices
     for device in Device.objects.filter(rack=rack):
-        if device.device_role.name == MULTI_MODE_CABLING:
+        if device.device_role.name == MULTI_MODE_DEVICE:
             multi_devices.append(device)
-        elif device.device_role.name == SINGLE_MODE_CABLING:
+        elif device.device_role.name == SINGLE_MODE_DEVICE:
             single_devices.append(device)
-        elif device.device_role.name == COPPER_CABLING:
+        elif device.device_role.name == COPPER_DEVICE:
             copper_devices.append(device)
-        elif device.device_role.name == POWER_CABLING:
+        elif device.device_role.name == POWER_DEVICE:
             power_devices.append(device)
         else:
             pass
