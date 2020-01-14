@@ -11,7 +11,7 @@ Then copy this directory (rack_statistics) under 'opt/netbox'.
 There are two scripts, the first, 'init_rack_statistics.sh', sould be able to copy and rename the interested folders and files in the right place (step 1,2,3), 
 if it doesn't work, follow all the steps.
 
-The second script, get_rack_data.py, need to be scheduled daily (better at night), because if it's done real time, it's a little bit too slow, it's used to retrieve and store ports data on a json to not impact the databse with this view.
+The second script, get_rack_data.py, need to be scheduled daily (better at night), because if it's done real time, it's a little bit too slow, it's used to retrieve and store ports data on a json file to not impact the databse with this view.
 
 1: Place 'opendev_code' under '/opt/netbox/netbox' and rename it to 'opendev'
 
