@@ -1,0 +1,40 @@
+<tr>
+	<td width="16%"><a href="{% url 'dcim:rack' pk=dati.pk %}">{{dati.name}}</a> </td>
+	<td width="12%">{{dati.role}}</td>
+	<td width="12%">{{dati.free_u}}/{{dati.height}}</td>
+	<td width="12%">
+		{% if dati.t_multi != 0 %}
+			<a href="{% url 'dcim:device_list' %}?rack_id={{dati.pk}}&role=cab-fiber-mm">{{dati.f_multi}}/{{dati.t_multi}}</a>
+		{% else %}
+			-/-
+		{% endif %}
+	</td>
+	<td width="12%">
+		{% if dati.t_single != 0 %}
+			<a href="{% url 'dcim:device_list' %}?rack_id={{dati.pk}}&role=cab-fiber-sm">{{dati.f_single}}/{{dati.t_single}}</a>
+		{% else %}
+			-/-
+		{% endif %}
+	</td>
+	<td width="12%">
+		{% if dati.t_copper != 0 %}
+			<a href="{% url 'dcim:device_list' %}?rack_id={{dati.pk}}&role=cab-copper">{{dati.f_copper}}/{{dati.t_copper}}</a>
+		{% else %}
+			-/-
+		{% endif %}
+	</td>
+	<td width="12%">
+		{% if dati.t_power != 0 %}
+			<a href="{% url 'dcim:device_list' %}?rack_id={{dati.pk}}&role=pdu&role=pdu-extender">{{dati.f_power}}/{{dati.t_power}}</a>
+		{% else %}
+			-/-
+		{% endif %}
+	</td>
+	<td width="12%">
+		{% if dati.kw != -1 %}
+			{{dati.kw}} {{dati.pow_unit}}
+		{% else %}
+			- kW
+		{% endif %}
+	</td>
+</tr>

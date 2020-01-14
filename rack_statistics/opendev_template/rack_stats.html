@@ -1,0 +1,86 @@
+{% extends '_base.html' %}
+{% load static from staticfiles %}
+{% load helpers %}
+
+{% block content %}
+<h1>
+	{% block title %}
+		Racks Statistics
+	{% endblock %}
+</h1>
+<h3>
+	Last Update : {{time}}
+</h3>
+<div class="row">
+	<div class="col-md-9">
+		<table id="interfaces_table" class="table table-responsive table-hover table-headings panel-body component-list">
+			<thead>
+				<tr>
+					<th width="16%">						
+						{% if 'sort' in request.get_full_path %}
+							<a href="{{request.path}}?{{params}}">Rack Name</a> 
+						{% else %}
+							Rack Name
+						{% endif %}	
+					</th>
+					<th width="12%">Role</th>
+					<th width="12%">					
+						{% if 'sort=unit' in request.get_full_path %}
+							Free/Tot Units
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=unit">Free/Tot Units</a> 
+						{% endif %}							
+					</th>
+					<th width="12%">
+						{% if 'sort=mm' in request.get_full_path %}
+							M.M. Fiber
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=mm">M.M. Fiber</a> 
+						{% endif %}
+					</th>
+					<th width="12%">
+						{% if 'sort=sm' in request.get_full_path %}
+							S.M. Fiber
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=sm">S.M. Fiber</a> 
+						{% endif %}
+					</th>
+					<th width="12%">
+						{% if 'sort=cu' in request.get_full_path %}
+							Copper
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=cu">Copper</a> 
+						{% endif %}
+					</th>
+					<th width="12%">
+						{% if 'sort=pow' in request.get_full_path %}
+							Pow. Outlet
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=pow">Pow. Outlet</a> 
+						{% endif %}
+					</th>
+					<th width="12%">
+						{% if 'sort=kw' in request.get_full_path %}
+							Power(kW)
+						{% else %}
+							<a href="{{request.path}}?{{params}}&sort=kw">Power</a>
+						{% endif %}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for dati in rack_list %}
+					{% include 'opendev/inc/rack_row.html' %}
+				{% empty %}
+					<tr>
+						<td colspan="9" class="text-center text-muted">&mdash; Wrong Selections &mdash;</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-3">
+		{% include 'inc/search_panel.html' %}
+    </div>
+</div>
+{% endblock %}
