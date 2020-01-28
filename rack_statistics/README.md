@@ -1,4 +1,4 @@
-This django app it's used to diaplay a view, containing some rack statstics, free units and number of available ports on structured cabling and pdus.
+This django app it's used to display a view, containing some rack statstics, free units and number of available ports on structured cabling and pdus.
 
 ![NetBox](screens/demo_page.PNG "Demo page")
 
